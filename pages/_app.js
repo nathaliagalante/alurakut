@@ -1,4 +1,5 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import { AlurakutStyles } from '../src/lib/AlurakutCommons'
 
 const GlobalStyle = createGlobalStyle`
   *{
@@ -8,8 +9,29 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: #D9E6F6;
+    background: linear-gradient(270deg, #5998e1, #8cb2de);
+    background-size: 400% 400%;
+
+    -webkit-animation: changeBackgroundColor 4s ease infinite;
+    -moz-animation: changeBackgroundColor 4s ease infinite;
+    animation: changeBackgroundColor 4s ease infinite;
     font-family: sans-serif;
+
+    @-webkit-keyframes changeBackgroundColor {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+    }
+    @-moz-keyframes changeBackgroundColor {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    @keyframes changeBackgroundColor {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
   }
 
   #_next{
@@ -23,6 +45,8 @@ const GlobalStyle = createGlobalStyle`
     height: auto;
     display: block;
   }
+
+  ${AlurakutStyles}
 `
 
 const theme = {
